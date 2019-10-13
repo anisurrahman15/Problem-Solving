@@ -9,9 +9,7 @@ typedef struct mylist
     struct mylist *next;
 
 } node;
-
-
-
+// Insert Last
 void insert_last(node *temp, int data)
 {
     while(temp->next != NULL)
