@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{ char str[1001];
+    while(gets(str))
+    {int cnt=0,flg=0,ans=0;
+    for ( int i=0;str[i]!='\0';i++)
+    {
+        if (str[i]>='A' && str[i]<='Z' || str[i]>='a' && str[i]<='z')
+        {cnt=1;}
+        else
+        {
+            ans+=cnt;
+            cnt=0;
+        }
+    }
+    ans+=cnt;
+    cout<<ans<<'\n';
+    str[0]='\0';
+    }
+
+    return 0;
+
+}
