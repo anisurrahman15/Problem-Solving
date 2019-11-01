@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+#include<stdio.h>
+using namespace std;
+long long int rev(long long int n)
+{
+    long long int rever=0,rem=0;
+    while(n!=0)
+    {
+        rem=n%10;
+        rever=rever*10+rem;
+        n/=10;
+    }
+    return rever;
+}
+int main ()
+{
+    long long int t,num,num1,cnt=0;
+   cin>>t;
+    while(t--)
+    {
+        num1=0,cnt=0;
+       cin>>num;
+        num1=rev(num);
+        while(num1!=num)
+        {
+            num=num+num1;
+            num1=rev(num);
+            cnt++;
+        }
+      cout<<cnt<<" "<<num1<<endl;
+    }
+    return  0;
+}
