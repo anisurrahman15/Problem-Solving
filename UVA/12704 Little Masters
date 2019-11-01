@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#include<stdio.h>
+using namespace std;
+int main ()
+{
+    int t,a,b,r,p,q,x,y;
+    float c,d,e;
+    cin >>t;
+    while(t--)
+    {
+        cin >>a>>b>>r;
+        x=0,y=0,p=0,q=0,c=0,d=0,e=0;
+        if (a==0 && b==0)
+        {
+            printf("%.2f %.2f\n",(float)r,(float)r);
+        }
+        else
+        {
+            p=(a-x);
+            q=(b-y);
+            e=sqrt(pow(p,2)+pow(q,2));
+            c=(float)r-e;
+            d=(float)e+(float)r;
+            printf("%.2f %.2f\n",c,d);
+
+        }
+    }
