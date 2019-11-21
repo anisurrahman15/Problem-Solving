@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+bool check(long int x)
+{
+    int arr[10]={0};
+
+    while(x)
+    {
+      arr[x%10]++;
+      x=x/10;
+     }
+     for ( int j=0;j<10;j++)
+     {
+         if (arr[j]>1)
+         {
+             return false;
+             break;
+         }
+     }
+     return true;
+
+
+
+}
+using namespace std;
+int main ()
+{
+    long int x,y,i;
+cin>>x>>y;
+for(i=x;i<=y;i++)
+{
+
+    if(check(i))
+    {
+      cout<<i<<endl;
+      return 0;
+    }
+
+}
+cout<<-1<<endl;
+
+
+    return 0;
+}
