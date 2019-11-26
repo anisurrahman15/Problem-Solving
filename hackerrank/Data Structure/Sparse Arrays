@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+
+    int string_count=0,quires_count=0,c=0;
+    string string_item;
+    cin>>string_count;
+    vector<string>strings(string_count);
+    for ( int i=0; i<string_count; i++)
+    {
+
+cin>>string_item;
+        strings[i]=string_item;
+
+    }
+    cin>>quires_count;
+    vector<string> quires(quires_count);
+    for ( int i=0; i<quires_count; i++)
+    {
+
+cin>>string_item;
+        quires[i]=string_item;
+
+
+    }
+    vector<int>arr;
+    for (auto i=quires.begin();i!=quires.end();i++)
+    {c=0;
+
+    for (auto j=strings.begin();j!=strings.end();j++)
+    {
+        if (*i==*j)
+        {
+            c++;
+        }
+    }
+    arr.push_back(c);
+    }
+        for (auto i=arr.begin();i!=arr.end();i++)
+            cout<<*i<<endl;
+
+
+
+    return 0;
+}
