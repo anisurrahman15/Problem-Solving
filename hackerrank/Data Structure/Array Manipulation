@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long a,b,c,m,n;
+    cin>>n>>m;
+    long max=0;
+
+
+
+  map<long,long> points;
+
+    for (long i = 0; i < m; ++i)
+    {
+        cin>>a>>b>>c;
+
+        points[a] += c;
+        points[b + 1] -= c;
+    }
+
+    long value = 0;
+    for (auto it = points.begin(); it != points.end(); it++)
+    {
+        value += it->second;
+        if (value > max)
+        {
+            max = value;
+        }
+    }
+    std::cout << max;
+    return 0;
+}
