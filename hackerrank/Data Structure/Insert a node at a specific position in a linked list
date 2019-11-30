@@ -1,0 +1,95 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct mylist
+{
+    int data;
+    struct mylist * next;
+
+
+};
+struct mylist * head;
+
+
+
+
+
+void display()
+{
+    struct mylist *temp=head;
+    while(temp!=NULL)
+    {
+        printf("%d ",temp->data);
+        temp=temp->next;
+    }
+    printf("\n");
+}
+struct mylist* insert_last(int data)
+{
+    struct mylist *temp=head,* new_node=(struct mylist*)malloc(sizeof(struct mylist));
+    new_node->data=data;
+    new_node->next=NULL;
+    if (temp==NULL)
+    {
+        head=new_node;
+        return new_node;
+    }
+    while(temp->next!=NULL)
+    {
+        temp=temp->next;
+    }
+    temp->next=new_node;
+
+    return temp;
+
+}
+
+struct mylist* insert_after_nth(struct mylist * head,int data,int x)
+{
+
+   struct mylist *newNode = (struct mylist*)malloc(sizeof(struct mylist));
+    newNode->data = data;
+
+    if (head == NULL) {
+        return newNode;
+    }
+
+    if (x == 0) {
+       newNode->next = head;
+       return newNode;
+    }
+
+    struct mylist *currentNode = head;
+    while (x - 1 > 0) {
+        currentNode = currentNode->next;
+        x--;
+    }
+
+    newNode->next = currentNode->next;
+    currentNode->next = newNode;
+
+    return head;
+
+}
+
+
+
+int main ()
+{
+    head=NULL;
+    insert_last(1);
+    insert_last(2);
+
+    insert_last(3);
+
+    insert_last(4);
+
+    insert_last(5);
+        display();
+printf("\n");
+insert_after_nth(head,9,2);
+        display();
+
+
+
+
+}
