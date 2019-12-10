@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace  std;
+int main ()
+{
+
+    int n,m,a=0,b=0;
+    cin>>n;
+    int narr[n+1];
+    for ( int i=0; i<n; i++)
+    {
+        cin>>narr[i];
+        if (narr[i]>a)
+            a=narr[i];
+
+    }
+    cin>>m;
+    int marr[m+1];
+    for ( int i=0; i<m; i++)
+    {
+        cin>>marr[i];
+        if (marr[i]>b)
+            b=marr[i];
+
+    }
+
+    cout<<a<<" "<<b<<endl;
+
+    return 0;
+}
