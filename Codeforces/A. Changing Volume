@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    int t,a,b,r,n,c,d;
+    cin>>t;
+    while(t--)
+    {
+        c=d=0;
+        cin>>a>>b;
+        n=abs(a-b);
+        d=n/5;
+        n=n%5;
+
+
+        c=d;
+        if (n==0)
+        {
+            cout<<c<<endl;
+            continue;
+        }
+        d=0;
+        d=n/2;
+        n=n%2;
+        c=c+d;
+        if (n==0)
+        {
+            cout<<c<<endl;
+            continue;
+        }
+        c++;
+        cout<<c<<endl;
+
+    }
+
+    return 0;
+}
