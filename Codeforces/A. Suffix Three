@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,i,k;
+    char str[1000];
+    cin>>t;
+    for ( i=1;i<=t;i++)
+    {k=0;
+
+scanf("%s",str);
+        k=strlen(str);
+
+        if (str[k-2]=='p' && str[k-1]=='o')
+            cout<<"FILIPINO\n";
+            else if ((str[k-4]=='d' && str[k-3]=='e' && str[k-2]=='s' && str[k-1]=='u') || (str[k-4]=='m' && str[k-3]=='a' && str[k-2]=='s' && str[k-1]=='u') )
+                cout<<"JAPANESE\n";
+            else if (str[k-5]=='m' && str[k-4]=='n' && str[k-3]=='i' && str[k-2]=='d' && str[k-1]=='a')
+                cout<<"KOREAN\n";
+                else
+                    continue;
+
+
+    }
+
+    return 0;
+}
