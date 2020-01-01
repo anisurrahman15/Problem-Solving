@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    long t;
+    deque<int> dq;
+    dq.assign(10,0);
+    cin >>t;
+    char ch[t+1];
+
+    for ( long i=0; i<t; i++)
+    {
+        cin>>ch[i];
+        if (ch[i]=='L')
+        {
+            for (int i = 0; i<=9; i++)
+            {
+                if (dq.at(i)==0)
+                {
+                    dq.at(i)=1;
+                    break;
+                }
+            }
+        }
+
+
+        else if (ch[i]=='R')
+        {
+            for (int i=9; i>=0; i--)
+            {
+                if (dq.at(i)==0)
+                {
+                    dq.at(i)=1;
+                    break;
+                }
+            }
+
+
+        }
+        else
+        {
+            long temp=ch[i]-'0';
+
+            dq.at(temp)=0;
+
+
+
+        }
+
+
+    }
+    for (auto it = dq.begin(); it != dq.end(); it++)
+        cout << *it;
+
+    cout<<endl;
+    return 0;
+}
