@@ -1,0 +1,76 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    long a,b,c,r,ans,t;
+    cin>>t;
+    while(t--)
+    {cin>>a>>b>>c>>r;
+        ans=0;
+        if (a>b)
+            swap(a,b);
+        if ( r==0)
+        {
+            ans=abs(a-b);
+            cout<<ans<<endl;
+            continue;
+
+        }
+
+        if (c>=a && c<=b)
+        {
+              int r1=b-c;
+            r1=(r1-r);
+
+            if (r1<0)
+                r1=0;
+            int r2=(c-a);
+            r2=(r2-r);
+            if (r2<0)
+                r2=0;
+
+
+
+            cout<<r1+r2<<endl;
+            continue;
+        }
+        else if (c>b)
+        {
+
+            r=(c-r);
+            if (r>b)
+                ans=(b-a);
+            else
+            {
+                ans=r-a;
+                if (ans<0)  ans=0;
+
+            }
+            cout<<ans<<endl;
+            continue;
+        }
+        else
+        {
+            r=(c+r);
+            if (r<a)
+            {ans=(b-a);
+            }
+
+            else
+            {
+                ans=b-r;
+
+                if (ans<0)  ans=0;
+
+
+            }
+                        cout<<ans<<endl;
+
+            continue;
+
+        }
+    }
+
+
+    return 0;
+}
