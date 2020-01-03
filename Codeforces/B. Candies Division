@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+   long ans, a,b,rem,t,rem2,rem3,d;
+    cin>>t;
+    while( t--)
+    {
+        cin>>a>>b;
+        rem=a/b;
+        rem2=b*rem;
+
+        rem3=a-rem2;
+
+        d=b/2;
+
+        if (rem3>=d)  ans=rem2+d;
+
+        else  ans=rem2+rem3;
+
+
+        cout<<ans<<endl;
+
+
+    }
+
+
+    return 0;
+}
