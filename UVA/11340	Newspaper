@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std ;
+int main ()
+{
+    int q,j,i,k,cost[300],n;
+    double total=0.0;
+    vector<char>ch(300);
+    char str[10005];
+
+    cin>>n;
+    while(n--)
+    {
+        total=0;
+        cin>>k;
+        for (  i =0; i<k; i++)
+        {
+            cin>>ch[i]>>cost[i];
+        }
+        cin>>q;
+        getchar();
+        while(q--)
+        {
+
+            str[0]='\0';
+            gets(str);
+            int z=strlen(str);
+            for (  i=0; i<z; i++)
+            {
+                for (  j=0; j<k; j++)
+                {
+                    if (ch[j]==str[i])
+                    {
+                        total+=cost[j];
+//                                cout<<total<<endl;
+                        break;
+                    }
+                }
+            }
+        }
+        total=total/100.0;
+        cout<<fixed<<setprecision(2)<<total<<"$"<<endl;
+        total=0;
+    }
+
+
+    return  0;
+}
