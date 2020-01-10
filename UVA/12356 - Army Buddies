@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef struct
+{
+    int left;
+    int right;
+
+
+} data;
+int main ()
+{
+    int s,b,p,q;
+    while(cin>>s>>b)
+    {
+        data node[s+1];
+        if (s==0 && b==0)
+            break;
+
+        for ( int i=1; i<=s; i++)
+        {
+            node[i].left=i-1;
+            node[i].right=i+1;
+        }
+        node[s].right=0;
+
+
+        while(b--)
+        {
+            cin>>p>>q;
+            if (node[p].left)
+                cout<<node[p].left<<" ";
+            else
+                printf("* ");
+            if (node[q].right)
+                cout<<node[q].right<<endl;
+            else
+                printf("*\n");
+            node[node[p].left].right=node[q].right;
+            node[node[q].right].left=node[p].left;
+        }
+        printf("-\n");
+
+
+
+
+    }
+
+
+    return 0;
+}
