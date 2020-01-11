@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    long long  n,r,x,i,c,y;
+    int arr[100];
+    while(cin>>n)
+    {  c=0;
+        while(n!=0)
+        {  i=-1,y=0;
+            x=n;
+            while(x>9)
+            {
+                r=x%10;
+                x=x/10;
+                arr[++i]=r;
+            }
+            arr[++i]=x;
+            sort(arr,arr+(i+1));
+            for( int j=0; j <=i; j++)
+            {
+                y*=10;
+                y+=arr[j];
+            }
+
+            n-=y, c++;
+        }
+        cout<<c<<endl;
+    }
+    return 0;
+}
