@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+
+   long n,x;
+   set<int>s;
+   while( cin>>n)
+   {x=n;
+   if (n==0) break;
+
+       for ( int i=2;i*i<=n;i++)
+       {
+           while(n%i==0)
+           {               s.insert(i);
+               n=n/i;
+           }
+       }
+        s.insert(n);
+
+cout<<x<<" : "<<s.size()<<endl;
+s.clear();
+   }
+
+
+    return 0;
+}
