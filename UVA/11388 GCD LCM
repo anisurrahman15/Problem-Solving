@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+
+    long t,a,b,x,y;
+    cin>>t;
+    while( t--)
+    {
+        cin>>x>>y;
+        if (y%x==0)
+        {
+            cout<<x<<" "<<y<<endl;
+
+        }
+        else
+            cout<<-1<<endl;
+
+    }
+
+
+
+    return 0;
+}
