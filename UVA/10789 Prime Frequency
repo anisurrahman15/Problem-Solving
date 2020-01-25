@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+int arr[2005]= {0},cnt=0;
+void prime()
+{
+    arr[0]=arr[1]=1;
+    for(int i = 2; i*i < 2002; i++)
+    {
+        for ( int j=i*i; j<=2002; j+=i)
+        {
+            arr[j]=1;
+        }
+    }
+}
+int main ()
+{
+    prime();
+    int c=1,t;
+    string str;
+    cin>>t;
+
+    while(t--)
+    {
+        cin>>str;
+        int asci[200]= {0},p=0;
+
+        printf("Case %d: ",c++);
+        for ( int i=0; i<str.size(); i++)
+            asci[(int)str[i]]++;
+
+        for ( int i = 48; i<=122; i++)
+        {
+            if (arr[asci[i]]==0)
+            {
+                cout<<(char)i;
+                p=1;
+            }
+        }
+        if (p==0)
+            cout<<"empty";
+
+        cout<<endl;
+
+    }
+
+
+    return 0;
+}
