@@ -1,0 +1,70 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    set<long>s;
+    vector<long> v;
+    int t,c,i,j,k;
+    long long n,d,x,y;
+    cin>>t;
+    while(t--)
+    {
+        c=0;
+        cin>>n;
+        y=n;
+        for (int  i =2; i*i<=n; i++)
+        {
+            if (n%i==0)
+            {
+                s.insert(i);
+                s.insert(n/i);
+
+            }
+        }
+        if (s.size()<3)
+        {
+            cout<<"NO\n";
+            s.clear(),v.clear();
+            continue;
+        }
+
+        else
+        {
+            v.assign(s.begin(), s.end());
+            for ( i=0; i<=(v.size()-3); i++)
+            {
+                if (c==1)
+                    break;
+
+                for ( j=i+1; j<=(v.size()-2); j++)
+                {
+                    if (c==1)
+                        break;
+
+                    for ( k=j+1; k<v.size(); k++)
+                    {
+                        x=v[i]*v[j]*v[k];
+                        if (x==n)
+                        {
+                            c=1;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        if (x==n)
+        {
+            cout<<"YES\n";
+            cout<<v[--i]<<" "<<v[--j]<<" "<<v[k];
+            cout<<endl;
+        }
+        else
+            cout<<"NO\n";
+
+        s.clear(),v.clear();
+    }
+
+
+    return 0;
+}
