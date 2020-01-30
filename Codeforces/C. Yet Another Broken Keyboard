@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+long int arr[200]={0};
+int main ()
+{
+    freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+     long long ans=0,k,x=0,n,i;
+    char ch[1000005],q;
+    cin>>k>>n;
+    scanf("%s",ch);
+    for ( int i =0; i<n; i++)
+    {
+        cin>>q;
+        arr[(int)q]=1;
+    }
+    for ( i=0; i<(k-1); i++)
+    {
+        if (arr[(int)ch[i]]!=1)
+        {
+            ans+=((x+1)*x)/2;
+            x=0;
+            continue;
+        }
+        x++;
+    }
+    if (arr[(int)ch[i]]==1)
+    {
+        x++;
+        ans+=((x+1)*x)/2;
+
+    }
+
+    cout<<ans<<endl;
+    return 0;
+}
