@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+
+    string p;
+    cout<<"Ready\n";
+    while(1)
+    {
+        getline(cin,p);
+        if (p[0]==' ' && p[1]==' ')
+            break;
+        if ((p[0]=='p' && p[1]=='q') || (p[0]=='q' && p[1]=='p'))
+            cout<<"Mirrored pair\n";
+        else if ((p[0]=='b' && p[1]=='d') || (p[0]=='d' && p[1]=='b'))
+            cout<<"Mirrored pair\n";
+        else
+            cout<<"Ordinary pair\n";
+        p[0]='\0';
+    }
+
+
+
+
+
+    return 0;
+}
