@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t, tem,e=0,o=0;
+    cin>>t;
+    for ( int i=0; i<t; i++)
+    {
+        cin>>tem;
+        if(tem%2==0)
+            e++;
+        else
+            o++;
+    }
+    if (o%2==0)
+        cout<<e<<endl;
+        else
+            cout<<o<<endl;
+
+
+    return 0;
+}
