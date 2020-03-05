@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+#define M 200000
+using namespace std;
+bool arr[M];
+vector<int>v;
+void seave()
+{
+v.push_back(1);
+    for (int p = 2; p * p < M; p++)
+    {
+        if (arr[p] == false)
+        {
+            for (int i = p * p; i <  M; i += p)
+            {
+                arr[i] = true;
+            }
+        }
+    }
+    for (int p = 2; p < M; p++)
+    {
+        if (arr[p]==false)
+        {
+            v.push_back(p);
+        }
+    }
+
+}
+int main ()
+{
+    seave();
+    int t,n;
+    cin>>t;
+    for ( int i=1; i<=t; i++)
+    {
+        cin>>n;
+        cout<<v[n]<<endl;
+    }
+}
