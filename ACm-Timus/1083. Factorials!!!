@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    int a,ans=1;
+    string str;
+    cin>>a>>str;
+    int n=str.size();
+    if (a%n==0)
+    {
+        for ( int i=a;i>=n;i=i-n)
+        {
+            ans*=i;
+        }
+    }
+    else
+    {
+       int r = a%n;
+       for ( int i=a;i>=r;i=i-n)
+        {
+            ans*=i;
+        }
+
+    }
+    cout<<ans<<endl;
+    return 0;
+}
