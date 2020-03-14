@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    int n,tem;
+    cin>>n;
+    vector<int>v[(n+n)+1];
+    for (int i =0; i<n; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            cin>>tem;
+            v[i+j].push_back(tem);
+        }
+    }
+    for ( int i=0; i<(n+n)-1; i++)
+    {
+        for (auto it = v[i].end() - 1; it >= v[i].begin(); it--)
+            cout << *it << " ";
+
+    }
+
+
+
+
+
+    return 0;
+}
