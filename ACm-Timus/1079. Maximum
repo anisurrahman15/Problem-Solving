@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+int arr[100000];
+operation()
+{
+    arr[0]=0,arr[1]=1;
+
+    for ( int i =0; i<=50000; i++)
+    {
+        arr[2*i]=arr[i];
+        arr[2*i + 1 ]=arr[i]+arr[i+1];
+    }
+    int tem =0;
+    for ( int i =0; i<=100000; i++)
+    {
+        if ( arr[i]>tem)
+            tem = arr[i];
+        arr[i]=tem;
+    }
+
+}
+
+int main()
+{
+    operation();
+    int n;
+    while(EOF)
+    {
+        cin>>n;
+        if ( n == 0)
+            break;
+
+        cout<<arr[n]<<endl;
+    }
+
+
+    return 0;
+}
