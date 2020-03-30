@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+
+    int n,x,i;
+
+    cin>>n;
+    int arr[n+5];
+    for (  i=1;i<=n;i++)
+    {
+        cin>>x;
+        arr[x]=i;
+
+
+    }
+    for (  i=1;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    cout<<arr[i]<<endl;
+
+
+    return 0;
+}
