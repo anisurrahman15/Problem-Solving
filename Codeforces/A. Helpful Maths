@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int i;
+string str;
+cin>>str;
+vector<int>v;
+for (  i=0;i<str.size();i=i+2)
+{
+    int n = str[i]-'0';
+    v.push_back(n);
+
+}
+sort(v.begin(),v.end());
+for (  i=0;i<v.size()-1;i++)
+{
+    cout<<v[i]<<"+";
+}
+cout<<v[i]<<endl;
+
+    return 0;
+}
