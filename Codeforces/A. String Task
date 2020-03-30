@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+vector <char >to_lower(string str)
+{
+    vector<char>tem;
+    int n = str.size();
+    for ( int i=0; i<n; i++)
+    {
+        char ch=str[i];
+        if (ch>='A'&& ch<='Z')
+        {
+            ch=ch+32;
+        }
+        if (ch=='a'|| ch=='e'|| ch=='u'|| ch=='o'||ch=='y' || ch=='i')
+        {
+            continue;
+        }
+        if (ch>='a' && ch<='z')
+        {
+            tem.push_back('.');
+            tem.push_back(ch);
+        }
+        else
+        {
+            tem.push_back(ch);
+        }
+    }
+    return tem;
+}
+int main()
+{
+    string str;
+    cin>>str;
+    vector<char> v;
+    v=to_lower(str);
+    for ( int i=0; i<v.size(); i++)
+    {
+        cout<<v[i];
+    }
+    cout<<endl;
+    return 0;
+}
