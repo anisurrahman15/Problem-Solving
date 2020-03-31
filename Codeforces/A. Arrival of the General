@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    int n,b=0,s=101,bi,si,ans=0;
+    cin>>n;
+    int arr[n+1];
+    for ( int i=1; i<=n; i++)
+    {
+        cin>>arr[i];
+        if ( arr[i]>b)
+        {
+            b=arr[i];
+            bi=i;
+        }
+        if ( arr[i]<=s)
+        {
+            s=arr[i];
+            si=i;
+        }
+    }
+    if ( bi>si)
+    {
+        ans=(n-si)+(bi-2);
+
+    }
+    else
+    {
+        ans=(bi-1)+(n-si);
+    }
+    cout<<ans<<endl;
+
+
+
+    return 0;
+}
