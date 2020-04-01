@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    int t,n,tem;
+    vector<int>v;
+    cin>>t;
+    for ( int i=0;i<t;i++)
+    {
+        cin>>tem;
+        v.push_back(tem);
+
+    }
+    sort(v.begin(),v.end());
+    int s=0,x=(double)ceil(t/2);
+    for ( int i=0;i<=x;i++)
+    {
+        s+=ceil((double)v[i]/2);
+
+    }
+    cout<<s<<endl;
+
+
+    return 0;
+}
