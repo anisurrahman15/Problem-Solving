@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    int n,m,a,b,ans=0;
+    cin>>n>>m>>a>>b;
+    int d= b/m;
+    if (d>=a)
+    {
+        ans = n*a;
+        cout<<ans<<endl;
+    }
+    else
+    {
+        int d1= n/m;
+        int r= n%m;
+        int ans = d1*b ;
+        if ((r*a)>=b)
+             ans+=b;
+        else
+         ans+= r*a;
+
+        cout<<ans<<endl;
+
+    }
+
+    return 0;
+}
