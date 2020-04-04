@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+
+    int x,y,t,i,n;
+    cin>>t;
+    while(t--)
+    {
+        cin>>x>>y;
+        string str(500,'0');
+        for (  i=0; i<x; i++)
+        {
+            cin>>n;
+            str[n]='1';
+        }
+
+        for ( i=1; ; i++)
+        {
+            if ( str[i]=='0')
+            {
+                if (y==0)
+                {
+                    break;
+                }
+                y--;
+            }
+        }
+
+        cout<<i-1<<endl;
+
+
+    }
+
+
+
+
+    return 0;
+}
