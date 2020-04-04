@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+int arr[1000];
+void seave()
+{
+    for ( int i=2;i<=1000;i++)
+    {
+        for ( int j= i*i;j<=1000;j+=i)
+        {
+            arr[j]=1;
+        }
+    }
+
+
+}
+int main ()
+{
+seave();
+int n;
+cin>>n;
+if ( arr[n]==0)
+{
+    cout<<1<<n<<endl;
+}
+else
+{
+
+    for ( int i=2;i<=n;i++)
+    {
+        if ( n%i==0)
+        {int d=n/i;
+            cout<<i<<d<<endl;
+            break;
+        }
+
+    }
+
+}
+
+
+
+
+    return 0;
+}
