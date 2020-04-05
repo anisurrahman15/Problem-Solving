@@ -1,0 +1,53 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    int t,cs=1;
+    cin>>t;
+    while(t--)
+    {
+        string str;
+        vector<char>v;
+        cin>>str;
+        int x=str[0]-'0';
+        for (int i=0; i<x; i++)
+            v.push_back('(');
+
+        v.push_back(str[0]);
+
+        int  tem,dif=0;
+        for ( int i=1; i<str.size(); i++)
+        {
+            tem= str[i]-'0';
+            dif=(tem-x);
+
+            if (dif>0)
+            {
+                for (int i=0; i<(abs(dif)); i++)
+                    v.push_back('(');
+
+            }
+            else if (dif<0)
+            {
+                for (int i=0; i<(abs(dif)); i++)
+                    v.push_back(')');
+            }
+            v.push_back(str[i]);
+            x=tem;
+
+        }
+        for (int i=0; i<x; i++)
+            v.push_back(')');
+
+
+        cout<<"Case #"<<cs++<<": ";
+        for ( int i=0; i<v.size(); i++)
+        {
+            cout<<v[i];
+        }
+        cout<<endl;
+        v.clear();
+    }
+
+    return 0;
+}
