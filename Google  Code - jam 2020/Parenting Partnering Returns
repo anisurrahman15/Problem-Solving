@@ -1,0 +1,71 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool condition(const pair<int,int>a,const pair<int,int>b )
+{
+    return (a.first<b.first);
+}
+int main ()
+{
+    vector<pair<int,int>>v;
+    int t,a,b,n,cs=1;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        for ( int i=0; i<n; i++)
+        {
+            cin>>a>>b;
+            v.push_back(make_pair(a,b));
+        }
+        sort(v.begin(),v.end(),condition);
+
+        vector<char>z;
+        z.push_back('J');
+        z.push_back('C');
+        int l1,r1,l2,r2,c=0;
+        l1=v[0].first,r1=v[0].second;
+        l2=v[1].first,r2=v[1].second;
+
+        for ( int i=2; i<v.size(); i++)
+        {
+            int a=v[i].first;
+            int b=v[i].second;
+            if (a<r1)
+            {
+                if((a<r2))
+                {
+                    c=1;
+                    break;
+                }
+                else
+                {
+                    z.push_back('C');
+                }
+                r2=v[i].second;
+            }
+            else
+            {
+                z.push_back('J');
+                r1=v[i].second;
+            }
+
+
+
+        }
+        if (c==1)
+        {
+            cout<<"Case #"<<cs++<<": IMPOSSIBLE";
+        }
+        else
+        {            cout<<"Case #"<<cs++<<": ";
+
+            for ( int i=0; i<z.size(); i++)
+                cout<<z[i];
+        }
+        cout<<endl;
+        z.clear();
+        v.clear();
+
+    }
+    return 0;
+}
