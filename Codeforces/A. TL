@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+
+    int n,m,minimum=101,maximum=0,c=0,tem;
+    cin>>n>>m;
+    for (int i=0; i<n; i++)
+    {
+        cin>>tem;
+        if ( tem<minimum)
+            minimum=tem;
+
+        if (tem>maximum)
+            maximum=tem;
+    }
+    int minumum2=101;
+    for ( int i=0; i<m; i++)
+    {
+        cin>>tem;
+        if ( tem<minumum2)
+            minumum2=tem;
+
+
+        if ( tem<=maximum)
+            c=1;
+    }
+    if (c==1)
+    {
+        cout<<-1<<endl;
+    }
+    else
+    {
+        if ((minimum *2)<=maximum)
+        {
+            cout<<maximum<<endl;
+        }
+        else
+        {
+            if ((minimum*2)<minumum2)
+            {
+                cout<<minimum * 2<<endl;
+            }
+            else
+                cout<<-1<<endl;
+        }
+    }
+
+
+    return 0;
+}
