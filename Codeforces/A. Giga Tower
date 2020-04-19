@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    long long int n,tem;
+    int k=0;
+    cin>>n;
+    while(1)
+    {
+        n++;
+        k++;
+        int c=0;
+        tem=n;
+        while(tem!=0)
+        {
+            int r= tem%10;
+            tem=tem/10;
+            if ( abs(r)==8)
+            {
+                c=1;
+                break;
+            }
+
+        }
+        if (c==1)
+        {
+            break;
+        }
+
+    }
+    cout<<k<<endl;
+    return  0;
+}
