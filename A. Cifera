@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    long long n,tem,x;
+    int k,c=-1;
+    cin>>k>>n;
+    tem =1 ;
+    x=n;
+    while(x>0)
+    {
+        x=n;
+        tem=tem*k;
+        x=x-tem;
+        c++;
+    }
+
+    if ( x==0)
+    {
+        cout<<"YES\n"<<c<<endl;
+    }
+    else
+    {
+        cout<<"NO\n";
+    }
+    return 0;
+}
