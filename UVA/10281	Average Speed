@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    string str;
+    long double total_sec=0,ans=0,speed=0,prev_sec=0,dist=0.0,cur_sec=0;
+    int h,m,s,len=0;
+    while(getline(cin,str))
+    {
+
+        cur_sec=ans=h=m=s=total_sec=0;
+        h=(str[0]-'0')*10 + (str[1]-'0');
+        m=(str[3]-'0')*10 + (str[4]-'0');
+        s=(str[6]-'0')*10 + (str[7]-'0');
+        cur_sec= ((h*3600)+(m*60)+s);
+        total_sec = cur_sec-prev_sec;
+        ans= speed*(total_sec/(double)3600) ;
+        dist+=ans;
+
+        prev_sec=cur_sec ;
+        len=str.size()-1;
+        if (str[8]!='\0')
+        {
+            int p=1;
+            speed=str[len--]-'0';
+            while(str[len]!=' ')
+            {
+                p=p*10;
+                long tem=(str[len]-'0')*p;
+                len--;
+                speed+=tem;
+            }
+        }
+        else
+        {
+            for (int i=0; i<8; i++)
+                cout<<str[i];
+
+            cout<<fixed<<setprecision(2)<<" "<<dist<<" km"<<endl;
+        }
+        str.clear();
+
+
+    }
+
+
+
+    return 0;
+}
