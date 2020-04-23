@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    int t,n,tem;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        vector<int>v;
+        for ( int i=0; i<n; i++)
+        {
+            cin>>tem;
+            v.push_back(tem);
+        }
+        n--;
+        long long sum=0;
+        for( int i=0; i<=n; i++)
+        {
+            int c=i;
+            tem=v[c];
+            i++;
+            while(i<=n)
+            {
+                if ((v[c]>0 && v[i]>0) || (v[c]<0 && v[i]<0) )
+                {
+                    if (tem<v[i])
+                        tem=v[i];
+                }
+                else
+                {
+                    sum+=tem;
+                    break;
+                }
+                i++;
+            }
+            i--;
+        }
+        sum+=tem;
+        cout<<sum<<endl;
+    }
+
+
+
+
+
+    return 0;
+}
