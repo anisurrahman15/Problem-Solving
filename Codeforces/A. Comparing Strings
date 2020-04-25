@@ -1,0 +1,75 @@
+#include<bits/stdc++.h>
+using namespace std;
+int arr1[125];
+int arr2[125];
+int main ()
+{
+    string a, b;
+    cin>>a>>b;
+
+    int x=a.size();
+    int y=b.size();
+    for ( int i=0; i<x; i++)
+    {
+        int p=(int)a[i];
+        arr1[p]++;
+    }
+    for ( int i=0; i<y; i++)
+    {
+        int p=(int)b[i];
+
+        arr2[p]++;
+    }
+    int c=0;
+    vector<int>v;
+    if (x==y)
+    {
+        for ( int i =97; i<=122; i++)
+        {
+            if (arr1[i]!=arr2[i])
+            {
+                c=1;
+                break;
+            }
+        }
+        if (c==0)
+        {
+            int k=0,l=0,r=0;
+            for ( int i=0; i<x; i++)
+            {
+                if (a[i]!=b[i])
+                {
+                    v.push_back(i);
+                }
+
+            }
+            if (v.size()>2)
+            {
+                c=1;
+            }
+            else
+            {
+                swap(a[v[0]],a[v[1]]);
+
+                       if (a!=b)
+                       c=1;
+
+            }
+
+        }
+
+
+    }
+    else
+    {
+        c=1;
+    }
+    if (c==1)
+        cout<<"NO\n";
+    else
+        cout<<"YES\n";
+
+
+
+    return 0;
+}
