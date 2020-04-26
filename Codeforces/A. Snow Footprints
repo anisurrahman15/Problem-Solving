@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+int n;
+cin>>n;
+string str;
+cin>>str;
+int l=0,r=0,k=0;
+for ( int i=0;i<n;i++)
+{
+    if (str[i]=='R')
+    {
+        r=i;
+    }
+    if (k==0)
+    {if (str[i]=='L')
+    {
+        l=i;
+        k=1;
+    }
+
+    }
+
+    if ( l>0 && r>0)
+    {
+        break;
+    }
+}
+if (l==0)
+{
+    l=r+1;
+
+}
+if (r==0)
+{
+    r=l-1;
+    swap(l,r);
+
+}
+cout<<r+1<<" "<<l+1<<endl;
+
+
+    return 0;
+}
+
+
+
