@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define ou(n) cout<<n
+#define in(n) cin>>n
+#define all(v) (v).begin(),(v).end()
+
+#define spc             printf(" ")
+#define line            printf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+
+
+using namespace std;
+inline void file()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+int main()
+{
+
+    int t;
+    in(t);
+    while(t--)
+    {
+        ll x,y,a,b,ans=0;
+        cin>>x>>y>>a>>b;
+        if (x==y)
+            ans= min((2*x*a),x*b);
+        else
+        {
+            ll p=x+y;
+            ll m= min(x,y);
+            ans= min((p*a),(abs(x-y)*a + (b*m)));
+        }
+        ou(ans);
+        line ;
+    }
+
+
+}
