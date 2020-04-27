@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,p=0,q=0,len;
+    cin>>t;
+    for ( int i=0; i<t; i++)
+    {
+        string s;
+        cin>>s;
+        p=q=len=0;
+        len=s.size();
+        for ( int i=0; i<len; i++)
+        {
+            if (s[i]=='0')
+                p++;
+            else if (s[i]=='1')
+                q++;
+        }
+        if (p==0 || q==0)
+        {
+            cout<<s<<endl;;
+        }
+        else
+        {
+            for ( int i=1; i<=(len*2); i++)
+            {
+                if (i%2==1)
+                {
+                    printf("0");
+ 
+                }
+                else
+                {
+                    printf("1");
+ 
+                }
+            }
+            cout<<"\n";
+        }
+ 
+ 
+    }
+ 
+ 
+ 
+    return 0;
+}
+ 
+ 
