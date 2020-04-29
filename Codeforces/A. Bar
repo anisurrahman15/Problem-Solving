@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+
+#define spc             printf(" ")
+#define line            printf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+
+// strring to int   sscanf(x.c_str(), "%d", &tem);
+
+
+using namespace std;
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+bool fun(string str[],string s)
+{
+    for ( int i=0;i<11;i++)
+        if (str[i]==s)
+        return true;
+
+    return false;
+}
+
+int main()
+{
+    int t;
+    string str[]={"ABSINTH", "BEER", "BRANDY", "CHAMPAGNE", "GIN","RUM", "SAKE","TEQUILA", "VODKA", "WHISKEY", "WINE"};
+    string x;
+    cin>>t;
+    int c=0,tem=0;
+    while(t--)
+    {
+        cin>>x;
+        if ((int)x[0]>=65 && (int)x[0]<=90)
+        {
+            if(fun(str,x))
+                c++;
+        }
+        else
+        {
+            sscanf(x.c_str(), "%d", &tem);
+            if (tem<18)
+                c++;
+        }
+
+    }
+    cout<<c<<endl;
+
+    return 0;
+
+}
