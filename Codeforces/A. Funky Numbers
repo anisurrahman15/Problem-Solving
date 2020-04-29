@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define out(n) cout<<n<<"\n"
+#define in(n) cin>>n<<"\n"
+#define all(v) (v).begin(),(v).end()
+
+#define spc             printf(" ")
+#define line            printf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+
+
+
+using namespace std;
+inline void file()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+
+int const N = 1e5 + 1;
+long long arr[N];
+void func()
+{
+    for ( int i=1;i<N;i++)
+    {
+        arr[i]=arr[i-1]+i;
+    }
+}
+
+int main()
+{
+
+//    int t,cs=1;
+//    in(t);
+//    while(t--)
+//    {
+//
+//
+//}
+func() ;
+
+long long int n;
+cin>>n;
+for ( int i=1;i<N;i++)
+{
+
+    if (binary_search(arr+1,arr+N,n-arr[i]))
+    {
+                    cout << "YES" << endl;
+        return 0;
+    }
+}
+    cout << "NO" << endl;
+    return 0;
+}
