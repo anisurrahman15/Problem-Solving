@@ -1,0 +1,66 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define pb                  push_back
+
+#define spc             printf(" ")
+#define line            printf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int a,b,c,d,k;
+        cin>>a>>b>>c>>d>>k;
+        double p= ceil(a/(double)c);
+        double q= ceil(b/(double)d);
+        int z=  k-(int)p;
+        if (z<q)
+        {
+            cout<<-1<<endl;
+        }
+        else
+        {
+
+            cout<<p<<" "<<q<<endl;
+
+        }
+
+
+        }
+
+    return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
