@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+
+long long n;
+int t;
+cin>>t;
+while(t--)
+{
+    cin>>n;
+
+long long arr[35];
+ arr[1]=2;
+for ( int i=2;i<=n;i++)
+{
+   arr[i]=arr[i-1]*2;
+}
+
+
+
+long long a=0,b=arr[n];
+int x=n/2;
+for ( int i=x; i<n;i++)
+    a+=arr[i];
+
+    for ( int i=1 ; i<x;i++)
+    b+=arr[i];
+
+    cout<<abs(a-b)<<endl;
+
+
+}
+
+    return 0;
+
+}
