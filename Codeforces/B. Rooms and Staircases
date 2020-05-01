@@ -1,0 +1,97 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define pb                  push_back
+
+#define spc             printf(" ")
+#define line            printf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,c=0,r=0,p=0,q=0;
+        cin>>n;
+        string str;
+        cin>>str;
+        int x=str.size(),y=0;
+        for ( int i=0; i<str.size(); i++)
+        {
+            if (str[i]=='1')
+            {
+                if (i>y)
+                    y=i;
+                if (i<x)
+                    x=i;
+
+                c++;
+            }
+        }
+
+        int ans=0;
+        int len=str.size();
+
+        if ( c==0)
+        {
+            ans=len;
+        }
+        else if (str[0]=='1' || str[len-1]=='1')
+        {
+            ans=len+len;
+        }
+        else
+        {
+
+
+             int x1,x2,y1,y2;
+            y2=len-y,x2=(len-x),y1=++y, x1=++x;
+
+
+            int z=max(max(x1,x2),max(y1,y2));
+            p=z+(len-z);
+            q=z+z;
+            r=len+c;
+            ans=max(max(p,q),r);
+
+        }
+        cout<<ans<<endl;
+
+
+
+
+    }
+
+    return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
