@@ -1,0 +1,61 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define pb                  push_back
+
+#define spc             printf(" ")
+#define line            printf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+int main()
+{
+
+    int t,n;
+    cin>>t>>n;
+    string str;
+    cin>>str;
+    int len = str.size();
+    while(n--)
+    {
+        for ( int i=0; i<(len-1); i++)
+        {
+            if ( str[i]=='B' && str[i+1]=='G')
+               {swap(str[i],str[i+1]);
+               i++;
+
+               }
+
+        }
+    }
+cout<<str<<endl;
+    return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
