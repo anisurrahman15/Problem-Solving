@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define pb                  push_back
+
+#define spc             prllf(" ")
+#define line            prllf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+#define    bitset<20> b1(a);
+
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+int main()
+{
+
+    ll n,m;
+    cin>>n>>m;
+    ll d= n/m;
+    ll r=n%m;
+    ll tem= r+d;
+    ll low1=(d*(d-1)/2)*(m-1) + (tem*(tem-1)/2) ;
+        ll low2= ( d*(d+1)/2 * r)+(d*(d-1)/2)*(m-r);
+        ll low= min(low1,low2);
+
+    tem= (n-m);
+    tem++;
+    ll up=(tem*(tem-1)/2) ;
+    cout<<low<<" "<<up<<endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
