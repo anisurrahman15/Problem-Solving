@@ -1,0 +1,75 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define pb                  push_back
+
+#define spc             prllf(" ")
+#define line            prllf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+#define    bitset<20> b1(a);
+
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+int main()
+{
+    int c=0;
+    ll n,l,dif,tem;
+    vector<ll>v;
+    cin>>n>>l;
+    for ( int i=0; i<n; i++)
+    {
+        cin>>tem;
+        v.push_back(tem);
+    }
+    sort(v.begin(),v.end());
+    tem=0;
+    if (v[0]!=0)
+    {
+        tem=v[0] *2;
+    }
+    if (v[n-1]!=l)
+    {
+        dif= (l-v[n-1]) *2;
+        if (dif>tem)
+            tem= dif;
+    }
+    for (int i=0; i<(n-1); i++)
+    {
+        dif=v[i+1]-v[i];
+        if ( dif>tem)
+            tem=dif ;
+    }
+    cout<<fixed<<setprecision(10)<<(double)tem/(double)2<<endl;
+
+
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
