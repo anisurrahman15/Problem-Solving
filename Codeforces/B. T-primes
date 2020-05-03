@@ -1,0 +1,79 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define pb                  push_back
+
+#define spc             prllf(" ")
+#define line            prllf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+#define bitset<20> b1(a)
+
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+int arr[1000001];
+void seave()
+{
+    for ( int i=2; i*i<=1000000; i++)
+    {
+        if ( arr[i]==0)
+        {
+            for ( int j=i*i; j<=1000000; j+=i)
+                arr[j]=1;
+        }
+    }
+}
+int main()
+{
+    seave();
+    ll n,p,tem;
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        p=sqrt(n);
+        tem= (ll)p*p;
+        if (tem==n)
+        {
+             if (arr[p]==0 && n!=1)
+            yes;
+        else
+            no;
+        }
+        else  no;
+
+
+
+    }
+
+
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
