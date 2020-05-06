@@ -1,0 +1,111 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define pb                  push_back
+
+#define spc             prllf(" ")
+#define line            prllf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+#define bitset<20> b1(a)
+
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+void solve()
+{
+    int a,b,c,d,e,f,g,h,i,zz=0;
+    cin>>a>>b>>c>>d>>e>>f>>g>>h>>i;
+    int x=b+c;
+    int y=d+f;
+    int z=g+h;
+    int dif1=0,dif2=0,dif3=0;
+    int big= max(max(x,y),z);
+    if (big==x)
+    {
+        dif1=big-max(y,z);
+        dif2=max(y,z)-min(y,z);
+        zz=x;
+
+    }
+    else if (big==y)
+    {
+        dif1=big-max(x,z);
+        dif2=max(x,z)-min(x,z);
+        zz=y;
+
+    }
+    else if (big==z)
+    {
+        dif1=big-max(x,y);
+        dif2=max(x,y)-min(x,y);
+        zz=z;
+
+    }
+    int p=0,q=0,r=0;
+    for ( int w=1; ; w++)
+    {
+        int aa=zz+w;
+        p=w,q=p+dif1,r=q+dif2;
+        int bb=p+q+r;
+        if (bb==aa)
+            break;
+    }
+
+
+
+
+    if(x>=y && x>=z)
+    {
+        a=p;
+        e=(x+p)-y;
+        i=(x+p)-z;
+    }
+    else if(y>=z && y>=x)
+    {
+        e=p;
+        a=(y+p)-x;
+        i=(y+p)-z ;
+    }
+    else
+    {
+        i=p;
+        e=(z+p)-y;
+        a=(z+p)-x;
+    }
+
+    cout<<a<<" "<<b<<" "<<c<<endl<<d<<" "<<e<<" "<<f<<endl<<g<<" "<<h<<" "<<i<<endl;
+
+
+
+
+}
+int main()
+{
+    solve();
+    return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
