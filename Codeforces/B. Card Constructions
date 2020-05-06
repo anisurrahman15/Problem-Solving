@@ -1,0 +1,84 @@
+#include<bits/stdc++.h>
+#define ll long long
+ 
+#define pb                  push_back
+ 
+#define spc             prllf(" ")
+#define line            prllf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+#define bitset<20> b1(a)
+ 
+ 
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+#define N 1000000000
+vector<ll>v;
+ll p=0;
+ll j=2;
+void solve()
+{
+    while(p<=N)
+    {
+        v.push_back(p);
+        p=p+j;
+        j+=3;
+    }
+ 
+ 
+}
+int main()
+{
+    solve();
+    ll x;
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int c=0;
+        cin>>x;
+        vector<ll>::iterator lower,upper;
+        if (x<2)
+        {
+            c=0;
+ 
+        }
+        else
+        {
+            while(1)
+            {
+                upper = upper_bound (v.begin(), v.end(), x);
+                upper--;
+                int z=upper-v.begin();
+                x-=v[z];
+                c++;
+                if (x<2)
+                    break;
+            }
+        }
+ 
+        cout<<c<<endl;
+ 
+    }
+    return 0;
+ 
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
