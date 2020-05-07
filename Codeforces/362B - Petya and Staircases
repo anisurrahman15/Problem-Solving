@@ -1,0 +1,94 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define pb                  push_back
+
+#define spc             prllf(" ")
+#define line            prllf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+#define bitset<20> b1(a)
+
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+int arr2[100][100];
+void solve()
+{
+
+}
+
+int main()
+{
+    ll n,m,tem;
+    cin>>n>>m;
+    vector<ll>v;
+    int c=0;
+    for (int i=0; i<m; i++)
+    {
+        cin>>tem;
+        if (tem==1 || tem==n)
+            c=1;
+
+            v.push_back(tem);
+    }
+    if(c==1)
+    {
+        cout<<"NO\n";
+    }
+    else
+    {
+        int k=0;
+        sort(v.begin(),v.end());
+        for ( int i=1; i<m; i++)
+        {
+            if (v[i-1]+1 == v[i])
+            {
+                k++;
+            }
+            else
+            {if (k>1)
+                {
+                    c=1;
+                    break;
+                }
+                k=0;
+            }
+        }
+        if (k>1)
+        {
+            c=1;
+        }
+        if (c==0)
+            cout<<"YES\n";
+        else
+            cout<<"NO\n";
+
+    }
+
+    return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
