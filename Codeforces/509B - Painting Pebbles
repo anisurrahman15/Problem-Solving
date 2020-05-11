@@ -1,0 +1,73 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define pb                  push_back
+
+#define spc             prllf(" ")
+#define line            prllf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+#define bitset<20>b1(a)
+
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+
+int main()
+{
+    // file() ;
+
+
+    int n,k;
+    cin>>n>>k;
+    int arr[n+1];
+    int x=INT_MAX,y=INT_MIN;
+    for ( int i=0; i<n; i++)
+    {
+        cin>>arr[i];
+        if (arr[i]<x)
+            x=arr[i];
+        if (arr[i]>y)
+            y=arr[i];
+
+    }
+    double tem=0;
+    int p,q;
+    p=(1.0 *x)/(double)k ;
+    if((k+x)<y)
+        q=ceil((1.0 *y)/(double)k);
+    else
+        q=(1.0 *y)/(double)k;
+
+
+
+
+
+    if ((q-p)<=1)
+    {
+        cout<<"YES\n";
+        for ( int i=0; i<n; i++)
+        {
+            int c=1;
+            for ( int j=0; j<arr[i]; j++)
+            {
+                cout<<c++<<" ";
+                if (c>k)
+                    c=1;
+            }
+            cout<<endl;
+        }
+    }
+    else
+    {
+        cout<<"NO\n";
+    }
+
+    return 0;
+}
