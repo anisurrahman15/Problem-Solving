@@ -1,0 +1,85 @@
+#include<bits/stdc++.h>
+#define ll long long
+ 
+#define pb                  push_back
+ 
+#define spc             prllf(" ")
+#define line            prllf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+#define bitset<20>b1(a)
+ 
+ 
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+#define N 1000005
+int arr[N];
+void prime()
+{
+    arr[0]=arr[1]=1;
+    for(int i = 2; i*i < N; i++)
+    {
+        for ( int j=i*i; j<=N; j+=i)
+        {
+            arr[j]=1;
+        }
+    }
+}
+int operation(int n)
+{
+    for (int i = 3; i * i <= n; i += 2)
+    {
+        if (n % i == 0)
+            return i;
+    }
+ 
+    return n;
+}
+int main()
+{
+    // file() ;
+    prime();
+ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+ 
+        ll n,m,ans=0;
+        cin>>n>>m;
+        if (n%2==0)
+        {
+ 
+            ans=n+(m*2);
+ 
+        }
+        else
+        {
+ 
+            if (arr[n]==0)
+            {
+                n+=n;
+            }
+            else
+            {
+ 
+n+=operation(n);
+            }
+ 
+            ans=n+(2*(m-1));
+        }
+ 
+ 
+        cout<<ans<<endl;
+    }
+ 
+ 
+ 
+    return 0;
+}
