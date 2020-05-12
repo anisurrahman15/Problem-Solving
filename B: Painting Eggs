@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define pb                  push_back
+
+#define spc             prllf(" ")
+#define line            prllf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+#define bitset<20>b1(a)
+
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+struct cost
+{
+    int x;
+    int y;
+};
+
+int main()
+{
+    int n;
+    cin>>n;
+    cost arr[n+1];
+    for ( int i=0;i<n;i++)
+        cin>>arr[i].x>>arr[i].y;
+
+        ll a=0,b=0;
+        for ( int i=0;i<n;i++)
+        {
+            if ((abs(a+arr[i].x)-b)<=500)
+            {a+=arr[i].x;
+                cout<<'A';
+            }
+            else
+            {
+                cout<<'G';
+                b+=arr[i].y;
+            }
+        }
+
+
+    return 0;
+}
