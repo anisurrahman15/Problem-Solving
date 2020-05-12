@@ -1,0 +1,70 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define pb                  push_back
+
+#define spc             prllf(" ")
+#define line            prllf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+#define bitset<20>b1(a)
+
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+struct day
+{
+    int x;
+    int y;
+};
+int arr[100];
+
+int main()
+{
+
+    int n, sum_time;
+    cin>>n>>sum_time;
+    day days[n+1];
+    int a,b,l=0,r=0;
+    for ( int i=0; i<n; i++)
+    {
+        cin>>a>>b;
+        days[i].x=a,days[i].y=b;
+        l+=a,r+=b;
+    }
+
+    if (sum_time>=l && sum_time<=r)
+    {
+        cout<<"YES\n";
+        int tem=sum_time-l;
+        for ( int i=0; i<n; i++)
+        {
+            if (tem>0)
+            {
+                int p=days[i].y-days[i].x;
+                if (p>tem)
+                    cout<<days[i].x + tem<<" ";
+                else
+                cout<<days[i].x + p<<" ";
+
+                                tem=tem-p;
+            }
+            else
+            cout<<days[i].x<<" ";
+        }
+    }
+    else
+    {
+
+        cout<<"NO\n";
+    }
+
+
+    return 0;
+}
