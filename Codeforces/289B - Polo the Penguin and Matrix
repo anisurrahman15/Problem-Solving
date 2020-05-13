@@ -1,0 +1,70 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define pb                  push_back
+
+#define spc             prllf(" ")
+#define line            prllf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+#define bitset<20>b1(a)
+
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+int c[10005];
+int main()
+{
+    int n,m,d,tem;
+    cin>>n>>m>>d;
+    int arr[n+1][m+1];
+    set<int>s;
+    set<int>k;
+    for ( int i=0; i<n; i++)
+    {
+        for ( int j=0; j<m; j++)
+        {
+            cin>>tem;
+            int p=tem%d;
+            k.insert(p);
+            arr[i][j]=tem;
+            s.insert(tem);
+            c[tem]++;
+        }
+    }
+    int ans=INT_MAX;
+
+
+
+    if (k.size()>1)
+    {
+        cout<<-1<<endl;
+    }
+    else
+    {
+        for ( auto i=s.begin(); i!=s.end(); i++)
+        {
+            int sum=0;
+            for ( auto j=--s.end(); j!=i ; j--)
+                sum+=(abs(*j - *i) / d) * c[*j];
+
+            for ( auto j=s.begin(); j!=i ; j++)
+                sum+=(abs(*j - *i) / d) * c[*j];
+
+            if (sum<ans)
+                ans=sum;
+        }
+        cout<<ans<<endl;
+    }
+
+
+
+
+    return  0;
+}
