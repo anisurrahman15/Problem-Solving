@@ -1,0 +1,63 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define pb                  push_back
+
+#define spc             prllf(" ")
+#define line            prllf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+#define bitset<20>b1(a)
+
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+bool solve(pair<int,int>&a,pair<int,int>&b)
+{
+    if (a.second>b.second)
+        return true;
+    else if (a.second==b.second)
+    {
+        if(a.first>b.first)
+            return true;
+        else
+            return false;
+    }
+    return false;
+
+}
+int main()
+{
+
+int n;
+cin>>n;
+vector<pair<int ,int>>v;
+while(n--)
+{
+    int a,b;
+    cin>>a>>b;
+    v.push_back(make_pair(a,b));
+}
+
+sort(v.begin(),v.end(),solve) ;
+//for ( int i=0;i<v.size();i++) cout<<v[i].first<<" "<<v[i].second<<endl;
+
+ll ans=0,c=1;
+for ( int i=0;i<v.size();i++)
+{
+    if (c==0) break;
+    ans+=v[i].first,c+=v[i].second;
+    c=c-1;
+
+}
+
+cout<<ans<<endl;
+
+    return 0;
+}
