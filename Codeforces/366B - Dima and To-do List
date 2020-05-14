@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define pb                  push_back
+
+#define spc             prllf(" ")
+#define line            prllf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+#define bitset<20>b1(a)
+
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define cs(cs)      cout<<"Case "<<cs++<<": "
+using namespace std;
+inline void file()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w", stdout);
+}
+int c[10005];
+int main()
+{
+int n,d;
+cin>>n>>d;
+int arr[n+2];
+int ans= INT_MAX,tem=0;
+for ( int i=1;i<=n;i++) cin>>arr[i];
+
+
+
+for ( int i=1;i<=d;i++)
+{
+    int sum =0;
+    int j=i;
+    while(j<=n)
+    {
+        sum+=arr[j];
+
+        j+=d;
+    }
+    if (sum<ans){
+        ans=sum;
+        tem=i;
+    }
+
+
+}
+
+cout<<tem<<endl;
+    return  0;
+}
