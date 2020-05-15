@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+
+    vector<pair<int, int>>v;
+    int n,x,y;
+    cin>>n>>x>>y;
+    for ( int i=0;i<n;i++)
+    { int a,b;
+        cin>>a>>b;
+        v.push_back(make_pair(a,b));
+    }
+    int c=0;
+    for ( int i=0;i<v.size();i++)
+    {
+        for ( int j=i+1;j<v.size();j++)
+        {
+           int  p=(x-v[i].first) * (y-v[j].second);
+           int  q=(x-v[j].first) * (y-v[i].second);
+            if (p==q)
+            {
+                v.erase(v.begin()+j);
+                j=j-1;
+            }
+        }
+        c++;
+
+    }
+cout<<v.size()<<endl;
+
+    return 0;
+}
