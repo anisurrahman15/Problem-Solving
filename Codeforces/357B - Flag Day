@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+int arr[100005];
+
+int main ()
+{
+int n,m;
+cin>>n>>m;
+  int p,q,r;
+    cin>>p>>q>>r;
+    arr[p]=1,arr[q]=2,arr[r]=3;
+for ( int i=1;i<m;i++)
+{
+cin>>p>>q>>r;
+if (arr[p]>0)
+{
+if (arr[p]==1) arr[q]=2,arr[r]=3;
+else if (arr[p]==2) arr[q]=1,arr[r]=3;
+else if (arr[p]==3) arr[q]=1,arr[r]=2;
+}
+else if (arr[q]>0)
+{
+if (arr[q]==1) arr[p]=2,arr[r]=3;
+else if (arr[q]==2) arr[p]=1,arr[r]=3;
+else if (arr[q]==3) arr[p]=1,arr[r]=2;
+}
+else if (arr[r]>0)
+{
+if (arr[r]==1) arr[p]=2,arr[q]=3;
+else if (arr[r]==2) arr[p]=1,arr[q]=3;
+else if (arr[r]==3) arr[p]=1,arr[q]=2;
+}
+else
+{
+    arr[p]=1,arr[q]=2,arr[r]=3;
+}
+
+}
+
+for ( int i=1;i<=n;i++)
+    cout<<arr[i]<<" ";
+
+    cout<<endl;
+
+
+
+return 0;
+
+}
