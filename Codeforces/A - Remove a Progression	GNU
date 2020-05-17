@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define all(v) (v).begin(),(v).end()
+#define fun(i,n) for(i=0;i<n;++i)
+
+
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+using namespace std;
+inline void file()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+void solve()
+{
+  ll n,m;
+  cin>>n>>m;
+  cout<<m*2<<endl;
+
+}
+int main()
+{
+
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+
+
+    }
+
+
+
+}
