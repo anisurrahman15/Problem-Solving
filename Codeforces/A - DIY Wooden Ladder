@@ -1,0 +1,106 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define all(v) (v).begin(),(v).end()
+#define fun(i,n) for(int i=0;i<n;++i)
+
+
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+using namespace std;
+inline void file()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+void solve()
+{
+    int n,tem;
+    cin>>n;
+    vector<int>v;
+    fun(i,n)
+    {
+        cin>>tem;
+        v.push_back(tem);
+    }
+
+    sort(v.begin(), v.end());
+
+    int len= v.size();
+    tem= v[len-2];
+    int ans=0;
+    if (tem>1)
+    {for ( int i=(len-3); i>=0; i--)
+    {
+        if (ans+1<tem)
+            ans++;
+    }
+    }
+
+    cout<<ans<<endl;
+}
+int main ()
+{
+
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+    }
+
+
+    return 0;
+}
+#include<bits/stdc++.h>
+#define ll long long
+#define all(v) (v).begin(),(v).end()
+#define fun(i,n) for(int i=0;i<n;++i)
+
+
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+using namespace std;
+inline void file()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+void solve()
+{
+    int n,tem;
+    cin>>n;
+    vector<int>v;
+    fun(i,n)
+    {
+        cin>>tem;
+        v.push_back(tem);
+    }
+
+    sort(v.begin(), v.end());
+
+    int len= v.size();
+    tem= v[len-2];
+    int ans=0;
+    if (tem>1)
+    {for ( int i=(len-3); i>=0; i--)
+    {
+        if (ans+1<tem)
+            ans++;
+    }
+    }
+
+    cout<<ans<<endl;
+}
+int main ()
+{
+
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+    }
+
+
+    return 0;
+}
