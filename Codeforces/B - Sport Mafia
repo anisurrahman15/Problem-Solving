@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define all(v) (v).begin(),(v).end()
+#define fun(i,n) for(i=0;i<n;++i)
+
+
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+using namespace std;
+inline void file()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+ ll  b_s( ll l, ll r, ll n, ll k)
+{
+     ll mid= (l+r)/2;
+     ll ans=((mid*(mid+1)) /2)-(n-mid);
+    if ( ans>k)
+        return b_s(l,mid,n,k) ;
+    else if ( ans<k)
+        return b_s(mid,r,n,k);
+    return mid;
+
+
+}
+void solve()
+{
+
+    ll n,k;
+    cin>>n>>k;
+    ll ans = b_s(1,n+1,n,k);
+    cout<<((ans*(ans+1))/2)-k<<endl;
+
+
+
+}
+ int main ()
+{
+
+    solve();
+
+
+
+    return 0;
+}
