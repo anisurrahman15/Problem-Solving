@@ -1,0 +1,80 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define all(v) (v).begin(),(v).end()
+#define fun(i,n) for(i=0;i<n;++i)
+
+
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+using namespace std;
+inline void file()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+void solve()
+{
+    string s,t,p;
+    cin>>s>>t>>p;
+    map<char,int>mp_p;
+    map<char,int>mp_s;
+
+
+    for ( int i=0; i<p.size(); i++)
+        mp_p[p[i]]++;
+
+    int j=0;
+    for ( int i=0; i<t.size(); i++)
+    {
+        if(t[i]==s[j])
+        {
+            j++;
+        }
+        else
+        {
+            mp_s[t[i]] ++;
+        }
+
+    }
+    if (j!=s.size())
+    {
+        cout<<"NO\n";
+    }
+    else
+    {
+        int c=0;
+        for (auto it=mp_s.begin(); it!=mp_s.end(); it++)
+        {
+            if (mp_p[it->first]<it->second)
+            {
+                c=1;
+                break;
+            }
+
+        }
+        if (c==0)
+            cout<<"YES\n";
+        else
+            cout<<"NO\n";
+
+    }
+
+
+
+
+
+
+
+
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+
+    }
+    return 0;
+}
