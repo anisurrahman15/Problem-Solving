@@ -1,0 +1,78 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define all(v) (v).begin(),(v).end()
+#define fun(i,n) for(int i=0;i<n;++i)
+#define vout(v)             for(int i=0;i<v.size();i++){ cout<<v[i]; if(i<v.size()-1) cout<<' '; else cout<<endl;}
+
+
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+using namespace std;
+inline void file()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+solve()
+{
+    int n;
+    cin>>n;
+    int tem;
+    vector<int>v;
+    for ( int i=0; i<(n*4); i++)
+    {
+        cin>>tem;
+        v.push_back(tem);
+    }
+sort(v.begin(),v.end());
+ int   q= (n*4) - 1 ;
+ int   p=0;
+ int c=0;
+ vector<int>chk;
+for ( int i=0;i<n;i++)
+{
+     int area=0;
+
+  if ((v[p]== v[p+1]) && (v[q] == v[q-1]))
+  {
+      area =v[p]* v[q];
+      chk.push_back(area);
+  }
+  else
+  {
+      c=1;
+            break;
+
+  }
+p+=2,q-=2;
+
+}
+for ( int i=1;i<chk.size();i++)
+{if (chk[i]!=chk[i-1])
+{
+    c=1;
+    break;
+}
+
+}
+
+    if (c==0)
+    {
+        cout<<"YES\n";
+        return 1 ;
+    }
+
+    cout<<"NO\n";
+}
+int main ()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+
+        solve();
+
+    }
+    return 0;
+}
