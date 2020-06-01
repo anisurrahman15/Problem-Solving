@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+using namespace std;
+inline void file()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+int ck[100001];
+void solve()
+{
+    int n,m;
+    cin>>n>>m;
+    int arr[m+1];
+    for ( int i=0; i<m; i++)
+    {
+        cin>>arr[i];
+    }
+    int c=0;
+    set<int>s;
+    for ( int i=0; i<m; i++)
+    {
+        ck[arr[i]]++;
+        if (ck[arr[i]]>c)
+            s.insert(arr[i]);
+        if (s.size()==n)
+        {
+            cout<<1;
+            c++,s.clear();
+            for ( int j=1; j<=n; j++)
+                if (ck[j]>c)
+                    s.insert(j);
+        }
+        else
+            cout<<0;
+    }
+    cout<<endl;
+}
+
+int main()
+{
+//    int t;
+//    cin>>t;
+//    while(t--)
+    solve();
+
+    return 0;
+}
