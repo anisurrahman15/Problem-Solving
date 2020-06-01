@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+using namespace std;
+inline void file()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+
+void solve()
+{
+
+   string str;
+   cin>>str;
+   int zero=0,one=0;
+   for (int i=0;i<str.size();i++)
+   { if (str[i]=='0') zero++;
+       else one++;
+   }
+
+   int ans=0,z=0,o=0;
+   ans= min(zero,one);
+   int len= str.size();
+   for ( int i=0;i<len;i++)
+   {
+       if (str[i]=='0') z++;
+       else o++;
+       int p = o+(zero-z);
+       int q= z+(one-o);
+       ans= min(ans,min(abs(p),abs(q)));
+   }
+   cout<<ans<<endl;
+
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+        solve();
+
+    return 0;
+}
