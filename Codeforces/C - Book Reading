@@ -1,0 +1,65 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+using namespace std;
+inline void file()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+
+ll func(ll n,ll m,int x)
+{
+    ll ans=0;
+    ll d= n/m;
+    ll q=d/(ll)10;
+    ans+=q*(ll)x;
+    int p=d%(ll)10;
+    for ( int i=1; i<=p; i++)
+    {
+        ll tem= (ll)m*(ll)i;
+        int p=tem%(ll)10;
+        ans+=p;
+    }
+    return ans;
+}
+void solve()
+{
+    unsigned long long n,m;
+    int ev=40,od=45,z=25;
+    cin>>n>>m;
+    int tem= m%(ll)10;
+    if (tem==0)
+    {
+        cout<<0<<endl;
+    }
+    else if (tem==5)
+    {
+        ll ans=func(n,m,z);
+        cout<<ans<<endl;
+    }
+    else if (m%2==0)
+    {
+        ll ans=func(n,m,ev);
+        cout<<ans<<endl;
+    }
+    else
+    {
+        ll ans=func(n,m,od);
+        cout<<ans<<endl;
+    }
+
+
+}
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+        solve();
+
+    return 0;
+}
