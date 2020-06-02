@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+#define ll long long
+ 
+#define PI              acos(-1.0)  // 3.1415926535897932
+ 
+using namespace std;
+inline void file()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+ 
+void solve()
+{
+    int n;
+    cin>>n;
+    vector<ll>v;
+ 
+    ll tem;
+    for ( int i=0; i<n; i++)
+    {
+        cin>>tem;
+        v.push_back(tem);
+    }
+    ll c=0;
+    tem=v[n-1];
+    for ( int i=n-2; i>=0; i--)
+    {
+        if (v[i]>tem)
+            c++;
+        else
+            tem=v[i];
+    }
+ 
+    cout<<c<<endl;
+ 
+ 
+}
+ 
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+        solve();
+ 
+    return 0;
+}
