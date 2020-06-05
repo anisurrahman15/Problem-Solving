@@ -1,0 +1,66 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+#define PI              acos(-1.0)  // 3.1415926535897932
+#define fun(i,n) for(int i=0;i<n;i++)
+
+using namespace std;
+string toBinary(ll n)
+{
+    string str;
+    while(n!=0)
+    {
+        str=(n%(ll)2==0 ?"0":"1")+str;
+        n/=(ll)2;
+    }
+    return str;
+}
+inline void file()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+ll rec( ll n)
+{
+    if (n==0 || n==1)
+        return n;
+    string str=toBinary(n);
+    int p= str.size()-1;
+    ll tem= pow(2,p);
+    ll ans=  pow(2,++p)-1;
+    return ans+rec(n-tem);
+
+}
+
+inline void solve()
+{
+    ll n;
+    cin>>n;
+    ll ans=0,i=0;
+    while(1)
+    { if (n==0 || n==1)
+        {
+            ans+=n;
+            break;
+        }
+        for (  i=0; i<=60; i++)
+        {
+            ll tem= (ll)pow(2,i);
+            if ( tem>n)
+                break;
+        }
+        ans+=pow(2,i)-1;
+        ll tem= (ll)pow(2,--i);
+        n= n-tem;
+    }
+    cout<<ans<<endl;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+        solve();
+
+    return 0;
+}
